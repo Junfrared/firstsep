@@ -2,10 +2,12 @@ const express = require("express");
 const adminRouter = require("./router/adminRouter");
 const collectionRouter = require("./router/collectionRouter");
 const productRouter = require("./router/productRouter");
+const path = require("path");
+
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send(`<h1>Hello Express</h1>`);
+    res.status(200).sendFile(path.join(__dirname, "views", "homepage.html"));
 });
 
 app.use("/admin", adminRouter);
