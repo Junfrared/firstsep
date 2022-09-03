@@ -9,3 +9,5 @@ const dashboard = (req, res) => {
         path.join(__dirname, "../", "views", "admin", "dashboard.html")
     );
 };
+
+module.exports = { login, dashboard };
