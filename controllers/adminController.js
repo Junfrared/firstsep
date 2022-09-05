@@ -10,4 +10,15 @@ const dashboard = (req, res) => {
     );
 };
 
-module.exports = { login, dashboard };
+const addproduct = (req, res) => {
+    res.status(200).sendFile(
+        path.join(__dirname, "../", "views", "admin", "add-product.html")
+    );
+};
+
+const addcollection = (req, res) => {
+    res.sendFile(
+        path.join(__dirname, "../", "views", "admin", "add-collection.html")
+    );
+};
+module.exports = { login, dashboard, addproduct, addcollection };
