@@ -17,7 +17,7 @@ const addproduct = (req, res) => {
 };
 
 const addcollection = (req, res) => {
-    res.sendFile(
+    res.status(200).sendFile(
         path.join(__dirname, "../", "views", "admin", "add-collection.html")
     );
 };

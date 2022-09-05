@@ -13,6 +13,10 @@ app.get("/", (req, res) => {
 app.use("/admin", adminRouter);
 app.use("/collection", collectionRouter);
 app.use("/product", productRouter);
-//app.use(pageNotFound);
+app.use((req, res) => {
+    res.status(404).sendFile(
+        path.join(__dirname, "views", "pageNotFound.html")
+    );
+});
 
 app.listen(3000);
